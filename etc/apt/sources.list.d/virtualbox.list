@@ -1,1 +1,1 @@
-deb http://download.virtualbox.org/virtualbox/debian stretch contrib
+deb http://download.virtualbox.org/virtualbox/debian buster contrib

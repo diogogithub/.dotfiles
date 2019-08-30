@@ -1,0 +1,52 @@
+[user]
+	name = Diogo Cordeiro
+	email = diogo@fc.up.pt
+[core]
+	editor = nvim
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	excludesfile = ~/.gitignore_global
+[credential]
+	helper = cache --timeout=3600
+[alias]
+	ctags = !.git/hooks/ctags
+[init]
+	templatedir = ~/.git_template
+[log]
+	decorate = short
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
+[push]
+	default = simple
+[alias]
+	fixup = "!sh -c '(git diff-files --quiet || (echo Unstaged changes, please commit or stash with --keep-index; exit 1)) && COMMIT=$(git rev-parse $1) && git commit --fixup=$COMMIT && git rebase -i --autosquash $COMMIT~1' -"
+	lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+# Show diffs with the diff-so-fancy tool, and seed the pager with a seach
+# pattern so files can be jumped to with n/N
+[pager]
+	show = diff-so-fancy | less --pattern='^(added|deleted|modified): '
+	diff = diff-so-fancy | less --pattern='^(added|deleted|modified): '
+; Can't use diff-so-fancy for e.g. `git add -p`, see diff-so-fancy#296
+; [interactive]
+;   diffFilter = diff-so-fancy
+# Clone git repos with URLs like "gh:alexpearce/dotfiles"
+[url "https://github.com/"]
+	insteadOf = "gh:"
+[url "git@github.com:"]
+	pushInsteadOf = "gh:"
+# Clone Arch User Repository repos with URLs like "aur:neomutt"
+[url "https://aur.archlinux.org/"]
+	insteadOf = "aur:"
+[merge]
+	tool = nvim
+[mergetool "nvim"]
+	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
+[rebase]
+	autosquash = true
+[status]
+	showUntrackedFiles = all

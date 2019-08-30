@@ -1,8 +1,41 @@
-# My Debian Setup
+Dotfiles
+========
+
+This is my collection of [configuration files](http://dotfiles.github.io/).
 
 ![](screenshot.png)
 
-Related blog post: [https://blog.diogo.site/posts/i3wm](https://blog.diogo.site/posts/i3wm)
+Usage
+-----
+
+Pull the repository, and then create the symbolic links [using GNU
+stow](https://alexpearce.me/2016/02/managing-dotfiles-with-stow/).
+
+```bash
+$ git clone https://github.com/diogogithub/.dotfiles.git ~/.dotfiles
+$ cd ~/.dotfiles
+$ stow tools templates composer feh geany ghc git i3 mariadbcli pgsqlcli ranger terminfo theme xorg-server zathura  # plus whatever else you'd like
+```
+Applications
+------------
+
+**OS**: Debian
+**WM**: i3
+**LockScreen**: light-lock
+**Launcher**: Rofi
+**Browser**: Waterfox
+**Development Environment**: Neovim
+**Document Viewer**: Zathura/Atril
+**File Manager**: PCManFM
+**Music**: cmus/clementine
+**Text Editor**: Geany
+**Video**: totem
+
+
+License
+-------
+
+[MIT](http://opensource.org/licenses/MIT).
 
 ## Installing
 
@@ -14,6 +47,10 @@ Download the XFCE CD1 from: https://cdimage.debian.org/debian-cd/current/amd64/i
 
     wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
     wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+    wget -O- https://jgeboski.github.io/obs.key | sudo apt-key add -
+    wget -O- http://apt.metasploit.com/metasploit-framework.gpg.key | sudo apt-key add -
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 60EE47FBAD3DD469
+    wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add - 
 
 
 ### USB flash installation media
@@ -26,6 +63,7 @@ Select:
 
 * print server
 * standard system utilities
+* XFCE
 
 ## Setting the repositories
 
@@ -83,6 +121,7 @@ Blueman automatically enables Bluetooth adapter when certain events (on boot, la
 
 Proper network manager with VPN support
 
+* curl
 * network-manager
 * network-manager-gnome
 * network-manager-openvpn
@@ -96,11 +135,16 @@ Proper network manager with VPN support
 * ppp
 * pptp-linux
 
-`sudo aptitude install network-manager network-manager-gnome network-manager-openvpn network-manager-vpnc network-manager-vpnc-gnome network-manager-pptp network-manager-pptp-gnome network-manager-openvpn network-manager-openvpn-gnome pptpd ppp pptp-linux`
+`sudo aptitude install curl network-manager network-manager-gnome network-manager-openvpn network-manager-vpnc network-manager-vpnc-gnome network-manager-pptp network-manager-pptp-gnome network-manager-openvpn network-manager-openvpn-gnome pptpd ppp pptp-linux`
 
 ## Shell
 
-* `sudo aptitude install zsh`
+* `cd ~/.local/bin/ && wget https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy && chmod +x diff-so-fancy && cd -`
+* `sudo aptitude install kitty fzf zsh`
+* https://github.com/zimfw/zimfw
+* `stow kitty shell tmux`
+
+
 
 ## Appearance
 
@@ -120,40 +164,47 @@ Proper network manager with VPN support
 
 ### Fonts
 
-* ttf-freefont
 * ttf-mscorefonts-installer
 * ttf-dejavu
-* ttf-liberation
 * fonts-hack-ttf
 * fonts-font-awesome
+* fonts-open-sans
+* fonts-paratype
 
-`sudo aptitude install ttf-freefont ttf-mscorefonts-installer ttf-dejavu ttf-liberation fonts-hack-ttf fonts-font-awesome`
+`sudo aptitude install ttf-mscorefonts-installer ttf-dejavu fonts-hack-ttf fonts-font-awesome fonts-open-sans fonts-paratype`
 
-### Spotlight
+### Spotlight (unused)
 
 [Diogo's spotlight script](https://git.gnu.io/snippets/107)
 
 ### i3
 
-* i3
+* [i3](https://blog.diogo.site/posts/i3wm)
 * suckless-tools
-* i3status
 * i3blocks
 * [XBright](https://github.com/snobb/xbright)
 * [morc_menu](https://github.com/Boruch-Baum/morc_menu)
 * ranger
-* cinnamon-settings-daemon
-* cinnamon-screensaver
+* light-locker
+* dconf-editor
+* xdotool
 
-`sudo aptitude install i3 suckless-tools i3status i3blocks ranger nitrogen cinnamon-settings-daemon cinnamon-screensaver`
+* `sudo aptitude install i3 j4-dmenu-desktop suckless-tools i3blocks ranger nitrogen light-locker xdotool`
+* `sudo update-alternatives --config x-terminal-emulator`
 
-## System
-
-### Notifications
+#### Notifications
 
 * xfce4-notifyd
 
 `sudo aptitude install xfce4-notifyd`
+
+## System
+
+### Power Manager
+
+* xfce4-power-manager
+
+`sudo aptitude install xfce4-power-manager`
 
 ### SECURITY (FIREWALL AND ANTI-VIRUS)
 
@@ -168,12 +219,6 @@ Proper network manager with VPN support
 
 `sudo aptitude install pk-update-icon apt-config-auto-update`
 
-### Power Manager
-
-* xfce4-power-manager
-
-`sudo aptitude install xfce4-power-manager`
-
 ### Wine
 
 `sudo aptitude -t stretch-backports install wine`
@@ -184,16 +229,19 @@ Proper network manager with VPN support
 
 * pavucontrol
 * libavcodec-extra
-* icedtea-plugin
-* rhythmbox
+* clementine
 * gimp
 * totem
 * handbrake
 * kdenlive
 * audacity
 * cmus
+* krita
+* blender
+* freecad
+* openscad
 
-`sudo aptitude install pavucontrol libavcodec-extra icedtea-plugin rhythmbox gimp totem handbrake kdenlive audacity cmus`
+`sudo aptitude install pavucontrol libavcodec-extra clementine gimp totem handbrake kdenlive audacity cmus`
 
 ### Utilities
 
@@ -201,42 +249,41 @@ Proper network manager with VPN support
 * parcellite
 * qalculate
 * gparted
-* kazam
+* simplescreenrecorder
 * kde-spectacle
-* eom
+* gthumb
+* feh
 * engrampa
-* xrandr
 * arandr
 * redshift-gtk
 
-`sudo aptitude install tmux parcellite qalculate gparted libreoffice kazam kde-spectacle eom engrampa xrandr arandr redshift-gtk`
+`sudo aptitude install tmux parcellite qalculate gparted libreoffice simplescreenrecorder kde-spectacle gthumb engrampa arandr redshift-gtk`
 
 ### Programming
 
 * geany with [Darcula colorscheme](https://raw.githubusercontent.com/codebrainz/geany-themes/master/colorschemes/darcula.conf)
-* netbeans
 * git
 
-`sudo aptitude install geany netbeans git`
+`sudo aptitude install geany git`
 
-#### VIM
+#### Neovim
 
 * `sudo aptitude purge vim-tiny`
-* `sudo aptitude install vim`
-* [vimrc](https://github.com/amix/vimrc)
+* `sudo aptitude install neovim`
+* `stow neovim tags-settings python javascript ruby`
+* `~/.config/nvim/installer/install.sh`
 
 ### Internet
 
-* firefox
-* deluge
-* thunderbird
-
-`sudo aptitude install firefox deluge thunderbird`
+* [Download Waterfox](https://www.waterfox.net/releases) to `/opt`
+* `tar -xvjf ./waterfox*.tar.bz2`
+* `cp ~/.dotfiles/waterfox/waterfox.desktop /usr/local/share/applications/waterfox.desktop`
+* `sudo aptitude install deluge`
 
 #### Chatting
 
 * [hexchat](https://hexchat.readthedocs.io/en/latest/building.html#unix) (with [Monokai](https://hexchat.github.io/themes.html) theme)
-* `sudo aptitude install gajim` with [gajim-dark](https://github.com/ntrrgc/gajim-dark)
+* `sudo aptitude install pidgin`
 
 #### KDE CONNECT
 
@@ -250,12 +297,14 @@ Proper network manager with VPN support
 * bc
 * SageMath
 * GNUPlot
+* jupyter-notebook
 
-`sudo aptitude install bc sagemath gnuplot`
+`sudo aptitude install bc sagemath gnuplot python3-dev python3-pip jupyter-notebook`
 
 ### Office
 
 * atril
 * libreoffice
+* zhatura
 
-`sudo aptitude install atril libreoffice`
+`sudo aptitude install atril libreoffice zathura`
