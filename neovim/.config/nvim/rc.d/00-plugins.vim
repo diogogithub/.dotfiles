@@ -87,7 +87,6 @@ Plug 'majutsushi/tagbar'
 Plug 'liuchengxu/vista.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'vim-scripts/Shebang'
-Plug 'w0rp/ale'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/MatchTagAlways'
@@ -152,7 +151,6 @@ Plug 'vim-scripts/po.vim--Jelenak'
 
 " PHP Support
 Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
-Plug 'kristijanhusak/deoplete-phpactor'
 Plug 'vim-php/tagbar-phpctags.vim'
 Plug 'tobyS/pdv'
 Plug 'StanAngeloff/php.vim'
@@ -191,6 +189,8 @@ Plug 'lumiliet/vim-twig', {'for': 'twig'}
 
 " javascript plugins
 Plug 'pangloss/vim-javascript'
+Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx', 'vue'], 'do': 'npm install'}
+
 Plug 'leafgarland/typescript-vim'
 
 " For react
@@ -200,19 +200,12 @@ Plug 'mxw/vim-jsx'
 Plug 'posva/vim-vue'
 
 " Autocomplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-clang'
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'wokalski/autocomplete-flow'
-Plug 'sebastianmarkow/deoplete-rust'
-Plug 'shougo/neoinclude.vim'
-Plug 'zchee/deoplete-jedi'
-Plug 'shougo/neco-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc-neco'
 Plug 'othree/csscomplete.vim'
 Plug 'othree/html5.vim'
 Plug 'othree/xml.vim'
 Plug 'c9s/perlomni.vim'
-Plug 'artur-shaik/vim-javacomplete2'
 
 
 " CSV plugin
