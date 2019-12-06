@@ -4,12 +4,6 @@
 # User configuration sourced by interactive shells
 #
 
-# Define zim location
-export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
-
-# Start zim
-#[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
-
 setopt LOCAL_OPTIONS          # allow functions to have local options
 setopt LOCAL_TRAPS            # allow functions to have local traps
 setopt CLOBBER

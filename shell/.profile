@@ -32,9 +32,3 @@ fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# {{START_NEOVIM_STUDIO_TOKEN}}
-if [ -z "${NEOVIM_STUDIO_PROFILE_SOURCED}" ] && [ -e "/home/xellos/.neovim-studio/neovim_studio_profile" ]; then
-    source "/home/xellos/.neovim-studio/neovim_studio_profile"
-fi
-# {{END_NEOVIM_STUDIO_TOKEN}}
-
