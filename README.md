@@ -141,7 +141,6 @@ Proper network manager with VPN support
 
 * `cd ~/.local/bin/ && wget https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy && chmod +x diff-so-fancy && cd -`
 * `sudo aptitude install kitty fzf zsh`
-* https://github.com/zimfw/zimfw
 * `stow kitty shell tmux`
 
 
