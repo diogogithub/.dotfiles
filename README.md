@@ -172,6 +172,11 @@ Proper network manager with VPN support
 
 `sudo aptitude install ttf-mscorefonts-installer ttf-dejavu fonts-hack-ttf fonts-font-awesome fonts-open-sans fonts-paratype`
 
+#### Install Microsoft Tahoma, Segoe UI, and other fonts
+
+    mkdir ~/.fonts
+    wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
+
 ### Spotlight (unused)
 
 [Diogo's spotlight script](https://git.gnu.io/snippets/107)
