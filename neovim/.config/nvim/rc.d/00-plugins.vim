@@ -206,6 +206,7 @@ Plug 'othree/csscomplete.vim'
 Plug 'othree/html5.vim'
 Plug 'othree/xml.vim'
 Plug 'c9s/perlomni.vim'
+Plug 'expipiplus1/vscode-hie-server', { 'branch': 'coc.nvim',  'do': 'yarn install --frozen-lockfile'}
 
 
 " CSV plugin
