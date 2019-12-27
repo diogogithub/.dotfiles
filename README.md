@@ -23,7 +23,7 @@ Applications
 **WM**: i3
 **LockScreen**: light-lock
 **Launcher**: Rofi
-**Browser**: Waterfox
+**Browser**: qutebrowser
 **Development Environment**: Neovim
 **Document Viewer**: Zathura/Atril
 **File Manager**: PCManFM
@@ -279,10 +279,7 @@ Proper network manager with VPN support
 
 ### Internet
 
-* [Download Waterfox](https://www.waterfox.net/releases) to `/opt`
-* `tar -xvjf ./waterfox*.tar.bz2`
-* `cp ~/.dotfiles/waterfox/waterfox.desktop /usr/local/share/applications/waterfox.desktop`
-* `sudo aptitude install deluge`
+* `sudo aptitude install deluge qutebrowser`
 
 #### Chatting
 
