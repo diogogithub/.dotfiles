@@ -95,7 +95,7 @@ set $workspace10 "10 "
 # Open applications on specific workspaces
 assign [class="Thunderbird"] $workspace9
 assign [class="Rhythmbox"] $workspace10
-assign [class="Waterfox"] $workspace2
+#assign [class="Firefox"] $workspace2
 assign [class="Atril"] $workspace3
 assign [class="TelegramDesktop"] $workspace9
 assign [class="Hexchat"] $workspace9
@@ -346,7 +346,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+F3 exec kitty -e 'ranger'
 bindsym Print exec ksnapshot
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-bindsym $mod+Shift+f exec /opt/waterfox/waterfox
+#bindsym $mod+Shift+f exec /opt/waterfox/waterfox
+#bindsym $mod+Shift+f exec qutebrowser
+bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+m exec thunderbird
 bindsym Ctrl+Shift+1 exec gnome-system-monitor
 bindsym $mod+Shift+t exec pcmanfm

@@ -23,7 +23,7 @@ Applications
 **WM**: i3
 **LockScreen**: light-lock
 **Launcher**: Rofi
-**Browser**: qutebrowser
+**Browser**: Firefox
 **Development Environment**: Neovim
 **Document Viewer**: Zathura/Atril
 **File Manager**: PCManFM
@@ -279,7 +279,7 @@ Proper network manager with VPN support
 
 ### Internet
 
-* `sudo aptitude install deluge qutebrowser`
+* `sudo aptitude install deluge firefox`
 
 #### Chatting
 
