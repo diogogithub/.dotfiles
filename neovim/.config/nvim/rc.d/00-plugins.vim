@@ -14,6 +14,7 @@ Plug 'kaicataldo/material.vim'
 " Appearance
 Plug 'ryanoasis/vim-devicons'
 Plug 'itchyny/lightline.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'junegunn/vim-journal'

@@ -125,12 +125,12 @@ nmap <leader>d :b#<bar>bd#<CR>
 " ==================================================
 " Tab navigation
 " ==================================================
-map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
-map <leader>t<leader> :tabnext
+map <leader>tm :tabmove<CR>
+nnoremap tn :tabnew<cr>
 nnoremap th :tabfirst<CR>
+nnoremap tk :tabnext<CR>
 nnoremap tj :tabprev<CR>
 nnoremap tl :tablast<CR>
 
@@ -256,11 +256,8 @@ noremap <C-p> :Denite buffer file_rec tag<CR>
 xmap <leader>a gaip*
 nmap <leader>t <C-w>s<C-w>j:terminal<CR>
 nmap <leader>vt <C-w>v<C-w>l:terminal<CR>
-nmap <leader>d <Plug>(pydocstring)
-nmap <leader>f :Files<CR>
 nmap <leader>g :Goyo<CR>
 nmap <leader>j :set filetype=journal<CR>
-nmap <leader>k :ColorToggle<CR>
 nmap <leader>l :Limelight!!<CR>
 autocmd FileType python nmap <leader>x :0,$!~/.config/nvim/env/bin/python -m yapf<CR>
 
