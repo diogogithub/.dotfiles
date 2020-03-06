@@ -28,16 +28,17 @@ endfunction
 
 " Coc extensions
 let g:coc_global_extensions = [
-      \ 'coc-json',
-      \ 'coc-css',
-      \ 'coc-tsserver',
       \ 'coc-emoji',
-      \ 'coc-html',
-      \ 'coc-ultisnips',
-      \ 'coc-yaml',
+      \ 'coc-diagnostic',
       \ 'coc-pairs',
+      \ 'coc-ultisnips',
+      \ 'coc-css',
+      \ 'coc-html',
       \ 'coc-java',
-      \ 'coc-vimtex'
+      \ 'coc-tsserver',
+      \ 'coc-vimtex',
+      \ 'coc-yaml',
+      \ 'coc-json',
       \]
 
 " \ 'coc-highlight',
