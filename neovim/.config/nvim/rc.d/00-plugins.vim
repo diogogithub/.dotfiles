@@ -76,12 +76,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ludovicchabant/vim-lawrencium'
 Plug 'junegunn/gv.vim'
 
-
 " Programming support
-
-Plug 'sheerun/vim-polyglot' " Over 70 language packs
-Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
-Plug 'elzr/vim-json'
 Plug 'tpope/vim-commentary'
 Plug 'majutsushi/tagbar'
 Plug 'liuchengxu/vista.vim'
@@ -93,7 +88,6 @@ Plug 'Valloric/MatchTagAlways'
 Plug 'amiorin/vim-project'
 Plug 'mhinz/vim-startify'
 Plug 'AndrewRadev/splitjoin.vim' " Split arrays in PHP / struct in Go / other things
-
 
 " Jump to definition
 Plug 'ludovicchabant/vim-gutentags'
@@ -109,8 +103,6 @@ source /usr/share/doc/fzf/examples/fzf.vim
 " allow multisearch in current directory / multi replace as well
 Plug 'wincent/ferret'
 
-
-
 " Generic Programming Support
 Plug 'tobyS/vmustache'
 Plug 'janko-m/vim-test'
@@ -124,16 +116,54 @@ Plug 'neomake/neomake'
 Plug 'joonty/vdebug'
 Plug 'ap/vim-css-color' " display the hexadecimal colors - useful for css and color config
 
-
-" systemd syntax and error
+" Polyglot
+Plug 'sheerun/vim-polyglot'
+Plug 'cespare/vim-toml'
+Plug 'chr4/nginx.vim'
+Plug 'chr4/nginx.vim'
+Plug 'chrisbra/csv.vim'
+Plug 'derekwyatt/vim-scala'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'elixir-lang/vim-elixir'
+Plug 'elzr/vim-json'
+Plug 'ericpruitt/tmux.vim'
+Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'jparise/vim-graphql'
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'lambdatoast/elm.vim'
+Plug 'lifepillar/pgsql.vim'
+Plug 'lumiliet/vim-twig', {'for': 'twig'}
+Plug 'maelvalais/gmpl.vim'
+Plug 'mboughaba/i3config.vim'
+Plug 'McSinyx/vim-octave'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'ocaml/vim-ocaml'
+Plug 'ocaml/vim-ocaml'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'posva/vim-vue'
+Plug 'rust-lang/rust.vim'
+Plug 'StanAngeloff/php.vim'
+Plug 'stephpy/vim-yaml'
+Plug 'sudar/vim-arduino-syntax'
+Plug 'tbastos/vim-lua'
+Plug 'tpope/vim-markdown'
+Plug 'udalov/kotlin-vim'
+Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/gnuplot-syntax-highlighting'
+Plug 'vim-scripts/R.vim'
+Plug 'vim-scripts/svg.vim'
+Plug 'voldikss/vim-mma'
 Plug 'wgwoods/vim-systemd-syntax'
+Plug 'wlangstroth/vim-racket'
 
 " emmet for html
 Plug 'mattn/emmet-vim'
 
 " Markdown / Writting
 Plug 'reedes/vim-pencil'
-Plug 'tpope/vim-markdown'
 Plug 'jtratner/vim-flavored-markdown'
 
 " LaTeX
@@ -143,7 +173,6 @@ Plug 'lervag/vimtex'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'klen/python-mode'
 Plug 'davidhalter/jedi-vim'
-Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 Plug 'Quramy/tsuquyomi'
 Plug 'groenewege/vim-less'
@@ -153,7 +182,6 @@ Plug 'vim-scripts/po.vim--Jelenak'
 Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
 Plug 'vim-php/tagbar-phpctags.vim'
 Plug 'tobyS/pdv'
-Plug 'StanAngeloff/php.vim'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'adoy/vim-php-refactoring-toolbox'
 Plug 'Rican7/php-doc-modded'
@@ -165,7 +193,6 @@ Plug 'vim-erlang/vim-erlang-omnicomplete'
 Plug 'vim-erlang/vim-erlang-compiler'
 
 " Elixir Support
-Plug 'elixir-lang/vim-elixir'
 Plug 'avdgaag/vim-phoenix'
 Plug 'mmorearty/elixir-ctags'
 Plug 'mattreduce/vim-mix'
@@ -176,19 +203,11 @@ Plug 'slashmili/alchemist.vim'
 Plug 'jadercorrea/elixir_generator.vim'
 Plug 'mhinz/vim-mix-format'
 
-" Elm Support
-Plug 'lambdatoast/elm.vim'
-
 " golang development
-Plug 'fatih/vim-go', {'for': 'go'} " general plugin
 Plug 'godoctor/godoctor.vim', {'for': 'go'} " refactoring
 Plug 'sebdah/vim-delve', {'for': 'go'} " debugger
 
-" twig
-Plug 'lumiliet/vim-twig', {'for': 'twig'}
-
 " javascript plugins
-Plug 'pangloss/vim-javascript'
 Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx', 'vue'], 'do': 'npm install'}
 
 Plug 'leafgarland/typescript-vim'
@@ -196,24 +215,14 @@ Plug 'leafgarland/typescript-vim'
 " For react
 Plug 'mxw/vim-jsx'
 
-" For Vue
-Plug 'posva/vim-vue'
-
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()}}
 Plug 'neoclide/coc-neco'
 Plug 'othree/csscomplete.vim'
-Plug 'othree/html5.vim'
 Plug 'othree/xml.vim'
 Plug 'c9s/perlomni.vim'
 "Plug 'expipiplus1/vscode-hie-server', { 'branch': 'coc.nvim',  'do': 'yarn install --frozen-lockfile'}
 
-
-" CSV plugin
-Plug 'chrisbra/csv.vim'
-
-" toml syntax highlighting
-Plug 'cespare/vim-toml'
-
-
 call plug#end()
+
+" vim:set et sw=2:
