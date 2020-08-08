@@ -3,8 +3,6 @@ Dotfiles
 
 This is my collection of [configuration files](http://dotfiles.github.io/).
 
-![](screenshot.png)
-
 Usage
 -----
 
@@ -20,15 +18,15 @@ Applications
 ------------
 
 **OS**: Debian
+**Desktop Environment**: XFCE
 **WM**: i3
 **LockScreen**: light-lock
 **Launcher**: Rofi
 **Browser**: Firefox
 **Development Environment**: Neovim
-**Document Viewer**: Zathura/Atril
+**Document Viewer**: Atril
 **File Manager**: PCManFM
-**Music**: cmus/clementine
-**Text Editor**: Geany
+**Music**: pragha
 **Video**: totem
 
 
@@ -50,7 +48,7 @@ Download the XFCE CD1 from: https://cdimage.debian.org/debian-cd/current/amd64/i
     wget -O- https://jgeboski.github.io/obs.key | sudo apt-key add -
     wget -O- http://apt.metasploit.com/metasploit-framework.gpg.key | sudo apt-key add -
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 60EE47FBAD3DD469
-    wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add - 
+    wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
 
 
 ### USB flash installation media
@@ -74,7 +72,7 @@ Select:
 ## SUDO
 
 ### Install sudo
-    aptitude install sudo gksu
+    aptitude install sudo xgd-su
 
 ### Add Administrator to sudoers
     adduser {username} sudo
@@ -85,7 +83,7 @@ Select:
     aptitude install firmware-linux intel-microcode amd64-microcode initramfs-tools firmware-amd-graphics
     aptitude install inotify-tools inotify-hookable sassc
     dpkg --add-architecture i386
-    
+
 ### Wifi
 
     aptitude install firmware-realtek firmware-iwlwifi
@@ -113,7 +111,7 @@ Select:
 
 ### Disable bluetooth auto power-on
 
-Blueman automatically enables Bluetooth adapter when certain events (on boot, laptop lid is opened, ...) occur. This can be disabled with the auto-power-on in org.blueman.plugins.powermanager: 
+Blueman automatically enables Bluetooth adapter when certain events (on boot, laptop lid is opened, ...) occur. This can be disabled with the auto-power-on in org.blueman.plugins.powermanager:
 
     sudo gsettings set org.blueman.plugins.powermanager auto-power-on false
 
@@ -239,7 +237,6 @@ Proper network manager with VPN support
 * handbrake
 * kdenlive
 * audacity
-* cmus
 * krita
 * blender
 * freecad
@@ -306,6 +303,5 @@ Proper network manager with VPN support
 
 * atril
 * libreoffice
-* zhatura
 
 `sudo aptitude install atril libreoffice zathura`
